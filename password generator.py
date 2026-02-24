@@ -12,8 +12,8 @@ numbers = ['0','1','2','3','4','5','6','7','8','9']
 sign = ['!','@','#','$','*']
 
 
-while True:
-    while True:
+while True: # main loop to continue generating passwords until user wants
+    while True: # loop to get proper input from user
         try:
             print("Choose the combinations for you password.")
             alpha = int(input("1. How many alphabets you want in your password? "))
@@ -27,6 +27,7 @@ while True:
                 print("Invalid choice")
 
     result = []
+    # loops to get data in specified number as user wants
     for i in range(alpha):
         result.append(random.choice(alphabet))
     for i in range(num):
@@ -34,17 +35,23 @@ while True:
     for i in range(symbols):
         result.append(random.choice(sign))
 
-    random.shuffle(result)
+    random.shuffle(result) # shuffling the password
     password = ""
 
-    for i in result:
+    for i in result: # loop to transfer password from a list to a string
         password += i
     print(f"Password = {password}\nYou can use this password or you can try again for a new password.")
     again = input("Type 'y' to try again and 'n' if you want to exit. " ).lower()
-    if again == "n":
+    if again == "y": #condition to check if user wants to try again
+        continue
+    elif again == "n":
+        print("Thankyou for using.")
         break
     else:
-        print("\n" * 5)
+        print("Wrong input. Automatically assuming exit")
+        print("Thankyou for using.")
+        break
+
 
 
 
