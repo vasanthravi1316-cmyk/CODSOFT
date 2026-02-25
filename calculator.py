@@ -54,7 +54,7 @@ def calculator():
             print(e)
             continue
 
-        continue_result = input("Type 'y' to continue or 'n' to restart.").lower()
+        continue_result = input("Type 'y' to continue or 'n' to exit.").lower()
         if continue_result == "y":
             num1 = result
         else:
